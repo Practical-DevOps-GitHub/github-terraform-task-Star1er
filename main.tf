@@ -16,6 +16,7 @@ variable "github_token" {
   type        = string
   sensitive   = true
   description = "GitHub token with permissions to manage repository settings, secrets, branches and deploy keys."
+  default     = null
 }
 
 variable "github_owner" {
@@ -36,18 +37,21 @@ variable "pat" {
   type        = string
   sensitive   = true
   description = "Personal Access Token that will be saved as GitHub Actions secret PAT."
+  default     = "ghp_000000000000000000000000000000000000"
 }
 
 variable "deploy_key" {
   type        = string
   sensitive   = true
   description = "Public SSH deploy key."
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBxK7U2J4oXhU4x8X1G5LQG9wJ8Vj0M3E5N6P7Q8R9S0T terraform-deploy-key"
 }
 
 variable "discord_webhook_url" {
   type        = string
   sensitive   = true
   description = "Discord webhook URL for pull request notifications."
+  default     = "https://discord.com/api/webhooks/000000000000000000/placeholder"
 }
 
 data "github_repository" "target" {
