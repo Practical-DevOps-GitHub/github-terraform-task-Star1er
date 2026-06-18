@@ -107,7 +107,7 @@ resource "github_branch_default" "develop" {
 }
 
 resource "github_branch_protection" "main" {
-  repository_id = data.github_repository.target.node_id
+  repository_id = "R_kgDOS8scmg"
   pattern       = "main"
 
   enforce_admins = false
@@ -126,7 +126,7 @@ resource "github_branch_protection" "main" {
 }
 
 resource "github_branch_protection" "develop" {
-  repository_id = data.github_repository.target.node_id
+  repository_id = "R_kgDOS8scmg"
   pattern       = "develop"
 
   enforce_admins = false
