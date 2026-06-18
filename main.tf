@@ -171,8 +171,3 @@ resource "github_repository_webhook" "discord_pull_request" {
     "pull_request"
   ]
 }
-resource "github_actions_secret" "terraform" {
-  repository  = var.repository
-  secret_name = "TERRAFORM"
-  value       = file("main.tf")
-}
