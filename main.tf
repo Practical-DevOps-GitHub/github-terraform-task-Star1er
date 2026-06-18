@@ -55,7 +55,7 @@ variable "discord_webhook_url" {
 }
 
 data "github_repository" "target" {
-  full_name = "${var.github_owner}/${var.repository}"
+  full_name = format("%s/%s", var.github_owner, var.repository)
 }
 
 resource "github_repository_collaborator" "softservedata" {
